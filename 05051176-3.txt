@@ -1,0 +1,41 @@
+void setup() 
+{
+  pinMode(8,OUTPUT);
+  pinMode(9,OUTPUT);
+  pinMode(10,OUTPUT);
+  pinMode(11,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(13,OUTPUT);
+  pinMode(14,OUTPUT);
+  pinMode(15,OUTPUT);
+  pinMode(6,INPUT);
+ }
+
+void loop()
+{
+  int a;
+  boolean val = digitalRead(6);
+  if(val)
+  {
+    for(a =8;a<=15;a++)
+    digitalWrite(a,HIGH);
+   }
+   else
+   {
+    for(a = 8;a<=15;a++)
+    {
+      digitalWrite(a,HIGH);
+      delay(100);
+      digitalWrite(a,LOW);
+    }
+    for(a=15;a>=8;a--)
+    {
+      digitalWrite(a,HIGH);
+      delay(100);
+      digitalWrite(a,LOW);
+    }
+    
+   }
+  
+
+}
